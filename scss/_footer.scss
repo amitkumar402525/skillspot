@@ -1,0 +1,145 @@
+.mainFooter {
+	background-color: #111111;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	.column {
+		& > h2 {
+			margin: 0 0 30px 0;
+			font-size: 18px;
+			font-weight: 500;
+			color: $white;
+		}
+	}
+}
+.footer_first {
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+	background-color: #111111;
+	padding: 60px 0;
+	.left {
+		.logo {
+			margin-bottom: 30px;
+		}
+		p {
+			color: $white;
+			margin-bottom: 30px;
+		}
+	}
+	.social_icons {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			gap: 20px;
+			& > li {
+				& > a {
+					color: $black;
+					background-color: $white;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					border-radius: 50px;
+					text-decoration: none;
+					height: 40px;
+					width: 40px;
+					font-size: 20px;
+					@include transition(all 0.3s ease);
+				}
+			}
+		}
+	}
+	.right {
+		h2 {
+			color: $white;
+			font-size: 24px;
+			margin-bottom: 30px;
+		}
+	}
+}
+.subsribe_newsletter_form {
+	background-color: rgba(255,255,255,0.2);
+	border-radius: 15px;
+  	flex-wrap: wrap;
+	display: flex;
+}
+.subsribe-form-fields {
+	position: relative;
+	flex-wrap: wrap;
+	display: flex;
+	margin: 20px;
+	width: 100%;
+	& > label {
+		width: 100%;
+		font-size: 0;
+		position: relative;
+		& > .after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			top: 0;
+			bottom: 0;
+			background-color: rgba(255, 255, 255, 0.1);
+			border-radius: 15px;
+			@include transition(all 0.3s ease);
+		}
+		& > input {
+			font-size: 16px;
+			border: none;
+			width: 100%;
+			border-radius: 10px;
+			padding: 15px;
+			height: 60px;
+			position: relative;
+			z-index: 1;
+			&:focus {
+				& ~ .after {
+					top: -20px;
+					bottom: -20px;
+					left: -20px;
+					right: -20px;
+				}
+			}
+		}
+	}
+	& > input[type="submit"] {
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 10px 20px;
+		border-radius: 5px;
+		border: none;
+		background-color: $black;
+		color: $white;
+		font-weight: 500;
+		z-index: 2;
+		@include transition(all 0.3s ease);
+	}
+}
+.footer_copyright {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 60px;
+	padding: 30px;
+	background-color: #D9D9D91A;
+	border-radius: 15px;
+	p {
+		color: $white;
+		margin-bottom: 0;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			margin-left: 15px;
+			color: $white;
+		}
+	}
+}

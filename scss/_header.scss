@@ -1,0 +1,96 @@
+.topbar {
+  background-color: $black;
+  padding: 5px 0;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
+}
+
+.innertop, .innerNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+.innertop {
+  a {
+    text-decoration: none;
+    font-size: 13px;
+    & > i {
+      margin-right: 5px;
+    }
+  }
+}
+.topRightNav > ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  & > li {
+    margin-left: 20px;
+
+    & > a {
+      color: $white;
+    }
+  }
+}
+.customNavbar {
+  padding: 10px 0;
+  position: sticky;
+  top: 33px;
+  z-index: 3;
+  box-shadow: 0 0 30px 0 rgba(0,0,0,0.1);
+  background-color: $white;
+}
+.topLeftNav > a {
+  color: $white;
+}
+
+.logo {
+  width: 100%;
+  max-width: 200px;
+
+  > a {
+    display: flex;
+  }
+}
+
+
+
+.bannerSec {
+  position: relative;
+  margin-bottom: 25px;
+  height: 600px;
+  &::after {
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    position: absolute;
+    background-color: rgba(0,0,0,0.3);
+  }
+}
+.backgroundVideo {
+  height: 100%;
+  & > video {
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+}
+.bannerContent {
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  @include transform(translate(-50%, -50%));
+}

@@ -1,0 +1,336 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+* {
+  font-family: "Work Sans", serif;
+}
+input {
+  &:focus, &:active, &:hover {
+    outline: none;
+  } 
+}
+img {
+  max-width: 100%;
+}
+.backgroundVideo {
+  & > video {
+    width: 100%;
+  }
+}
+.list-style-none {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.default-style-ul {
+  & > li {
+    & > a {
+      display: inline-block;
+      padding: 15px 10px;
+      color: $primary-color;
+      font-weight: 500;
+    }
+  }
+}
+.btn-group-a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  & > a {
+    font-weight: 500;
+    color: $primary-color;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    @include transition("all 0.3s ease");
+    &.fill-btn {
+      text-decoration: none;
+      background-color: $primary-color;
+      border-color: $primary-color;
+      color: $white;
+    }
+  }
+}
+.h2-default {
+  font-size: 64px;
+  font-weight: bold;
+  color: $white;
+  margin-bottom: 0;
+  line-height: 1.5;
+  margin-top: 0;
+}
+.p-default {
+  font-size: 18px;
+  font-weight: 400;
+  color: $white;
+  line-height: 1.44;
+  margin-bottom: 15px;
+}
+.searchGroup {
+  min-width: 600px;
+  min-height: 70px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  box-shadow: 4px 4px 20px 0 rgba(0,0,0,.05);
+  .search {
+    width: 100%;
+    @include display(flex);
+    align-content: center;
+    justify-content: center;
+    border-radius: 15px;
+    & > input {
+      width: 100%;
+      border: none;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+.btn-filter-search-icon {
+  width: 50px;
+  @include display(flex);
+  align-content: center;
+  justify-content: center;
+  flex: 0 0 50px;
+  & > .fa-search {
+    align-content: center;
+    font-size: 20px;
+    color: $black;
+  }
+}
+.btn-filter-search-btn {
+  @include display(flex);
+  justify-content: center;
+  align-content: center;
+  min-width: 100px;
+  & > input {
+    width: 100%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+  }
+}
+.shape-arrow-bottom {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  z-index: 2;
+  .left {
+  }
+  & > span {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: $white;
+    &.left {
+      @include transform(skewY(3deg));
+      background-color: $white;
+      width: 50%;
+      height: 100%;
+      width: 100%;
+      max-width: 50%;
+    }
+    &.right {
+      transform: skewY(-3deg);
+      background-color: $white;
+      width: 50%;
+      height: 100%;
+      width: 100%;
+      max-width: 50%;
+      margin-left: auto;
+      margin-top: -50px;
+    }
+  }
+}
+.default-style-none {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.default-style2-ul {
+  & > li {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    & > a {
+      color: $white;
+    }
+  }
+}
+.sec-start-h2 {
+  font-size: 34px;
+  font-weight: 500;
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: normal;
+}
+.sec-start-h6 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+.form-control {
+  &.style1 {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 4px;
+    width: 100%;
+    background-color: #fff;
+    font-size: 16px;
+    color: $black;
+    height: 50px;
+    @include transition(all 0.3s ease);
+    &:focus, &:hover {
+      border-color: rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    }
+  }
+}
+.fillBtn {
+  .style1 {
+    @include transition(all 0.3s ease);
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: $white;
+    font-weight: 500;
+    border-radius: 4px;
+    &:hover {
+      background-color: $hovered-bg-color;
+    }
+  }
+}
+.form-horizontal {
+  .col-md-6.left {
+    & > .form-group {
+      padding-right: 15px;
+    }
+  }
+  .col-md-6.right {
+    & > .form-group {
+      padding-left: 15px;
+    }
+  }
+}
+.formWrp {
+  .form-group {
+    margin-bottom: 30px;
+  }
+}
+.form-check {
+  position: relative;
+  .form-check-label {
+    a {
+      z-index: 1;
+      position: relative;
+    }
+  }
+  a {
+    color: $primary-color;
+  }
+  .form-check-input {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    width: 100%;
+  }
+  .form-check-label {
+    margin: 0;
+    font-weight: 500;
+    margin-left: 10px;
+    cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 20px;
+      width: 20px;
+      background-color: $bg-light;
+      border: 1px solid $border-light;
+      border-radius: 4px;
+      @include transition(all 0.3s ease);
+      cursor: pointer;
+    }
+    &::after {
+      content: "";
+      @include transition(all 0.3s ease);
+      font-family: fontawesome;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 0;
+      left: 3px;
+      color: $white;
+      opacity: 0;
+    }
+  }
+  & > input {
+    cursor: pointer;
+    &:checked {
+      & ~ label {
+        &::before {
+          background-color: $primary-color;
+          border-color: $primary-color;
+          cursor: pointer;
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.err {
+  & > input {
+    border-color: $red05;
+  }
+ .error {
+    color: $red05;
+    font-size: 13px;
+    display: inline-block;
+    margin-top: 5px;
+  } 
+  &.form-check {
+    .error {
+      position: absolute;
+      left: 0;
+      bottom: -20px;
+  }
+  }
+}
+.required { color: $red05; }
+.successful_msg {
+  display: inline-block;
+  color: green;
+}
+
+.box_title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}

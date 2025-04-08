@@ -1,0 +1,21 @@
+.select2-results__options {
+  .select2-results__option--disabled {
+    color: #000000 !important;
+    font-weight: 600  !important;
+  }
+  .select2-results__option--selectable {
+    padding-left: 25px  !important;
+  }
+}
+.select2-container--classic{
+  .select2-container--open {
+    .select2-dropdown {
+      border-color: #8080c0 !important;
+    }
+  }
+  .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: #8080c0 !important;
+    color: $white;
+  }
+}
+.select2-container--classic.select2-container--open .select2-dropdown { border-color: #8080c0 !important; }

@@ -1,0 +1,66 @@
+.card_title {
+	margin-bottom: 20px;
+}
+.btn-group {
+	&.small-right {
+		width: 100%;
+		justify-content: right;
+		gap: 10px;
+		.btn {
+			border-radius: 8px;
+			height: 45px;
+		}
+		.outlined {
+			background-color: $white;
+			color: $primary-color;
+			&:hover {
+				background-color: $hovered-bg-color;
+				color: $white;
+			}
+		}
+	}
+}
+.uploadBtnStyle1 {
+	border-radius: 10px;
+	position: relative;
+}
+.uploadImg {
+	& > img {
+		border-radius: 10px;
+		border: 2px dashed #dddddd;
+	}
+}
+.uploadBtn {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: end;
+	cursor: pointer;
+	& > .fa-pen {
+		position: absolute;
+		right: -5px;
+		top: -5px;
+		background-color: $black;
+		border-radius: 40px;
+		color: #fff;
+		font-size: 11px;
+		width: 20px;
+		height: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	& > input[type="file"] {
+		position: absolute;
+		left: 0;
+		right: -5px;
+		top: -5px;
+		bottom: 0;
+		z-index: 2;
+		cursor: pointer;
+	}
+}
