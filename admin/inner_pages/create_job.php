@@ -17,7 +17,7 @@ if (!isset($_SESSION['user_id'])) {
             	<div class="formWrp">
 					<form class="form-horizontal" id="postJobForm" action="">
 			            <div class="box_body dash_card_box">
-			              	<h6 class="box_title">Basic info</h6>
+			              	<h6 class="box_title">Job info</h6>
 							<div class="row">
 							    <div class="col-md-4">
 									<div class="form-group">
@@ -66,7 +66,7 @@ if (!isset($_SESSION['user_id'])) {
 										    <option>Front-end Development</option>
 										    <option>Web Development</option>
 										</select>
-							        	<span id="jobCategoryError" class="error"></span>
+							        	<span id="jobCategoriesError" class="error"></span>
 							      	</div>
 							    </div>
 							    <div class="col-md-4">
@@ -113,13 +113,13 @@ if (!isset($_SESSION['user_id'])) {
 							    	<div class="form-group">
 							      		<label class="control-label" for="careerLevel">Career level: <span class="required">*</span></label>
 										<!-- Multi-select dropdown allowing users to choose multiple options -->
-										<select id="carrerLevel" class="careerLevelSelect customSelect" data-tags="false" data-max-selection="1" name="carrerLevel[]" multiple="multiple" data-placeholder="Select Carrer level">
+										<select id="carrerLevel" class="careerLevelSelect customSelect" data-tags="false" data-max-selection="1" name="careerLevel[]" multiple="multiple" data-placeholder="Select Carrer level">
 										    <option>Fresher</option>
 										    <option>Junior</option>
 										    <option>Middle</option>
 										    <option>Senior</option>
 										</select>
-							        	<span id="carrerLevelError" class="error"></span>
+							        	<span id="careerLevelError" class="error"></span>
 							      	</div>
 							    </div>
 							    <div class="col-md-4">
@@ -150,14 +150,14 @@ if (!isset($_SESSION['user_id'])) {
 							    <div class="col-md-4">
 									<div class="form-group">
 							      		<label class="control-label" for="closingDays">Closing days: <span class="required">*</span></label>
-							        	<input type="text" id="closingDays" class="form-control style1" placeholder="30" name="closingDays">
+							        	<input type="number" id="closingDays" class="form-control style1" placeholder="30" name="closingDays">
 							        	<span id="closingDaysError" class="error"></span>
 							      	</div>
 							    </div>
 							    <div class="col-md-4">
 									<div class="form-group">
-							      		<label class="control-label" for="salary">Salary: <span class="required">*</span></label>
-							        	<input type="text" id="salary" class="form-control style1" placeholder="($) - USD" name="salary">
+							      		<label class="control-label" for="salary">Salary per hour ($ - USD): <span class="required">*</span></label>
+							        	<input type="number" id="salary" class="form-control style1" placeholder="($) - USD" name="salary">
 							        	<span id="salaryError" class="error"></span>
 							      	</div>
 							    </div>
@@ -185,7 +185,10 @@ if (!isset($_SESSION['user_id'])) {
 							</div>
 						</div>
 					</form>
-					<div id="output" class="successful_msg"></div>
+					<div class="alert alert-success alert-dismissible fade in successful_msg_alert">
+					    <strong>Success!</strong> <div id="output" class="successful_msg"></div>
+					    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+					</div>
 				</div>
               </div>
             </div>
@@ -201,19 +204,28 @@ if (!isset($_SESSION['user_id'])) {
 
 			// Clear previous error messages
             $('.error').html('');
+            $("#output").parent(".successful_msg_alert").removeClass("show");
             $(".form-group, .radiobtnstyle, .form-check").removeClass("err"); // Clear any previous error classes
 
             var data = $(this).serialize();
-            // data += '&signin=true';
+            data += '&postJob=true';
             $.ajax({
 				url: "../action_pages/postJob.php",
 				type: "post",
 				data: data,
 				success: function(response) {
+					console.log(response);
 					jsonResponse = JSON.parse(response);
 					if (jsonResponse.success == "true") {
 						$("#output").html(jsonResponse.message);
+						$("#output").parent(".successful_msg_alert").addClass("show");
+
 						// alert(JSON.stringify(jsonResponse));
+						
+						// Auto-hide alert box after 5 seconds
+						setTimeout(function() {
+						    $("#output").parent(".successful_msg_alert").removeClass("show");
+						}, 5000);
 
 						// Check if redirect URL in the response
 	                    if (jsonResponse.redirect) {

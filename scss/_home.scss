@@ -17,6 +17,7 @@
 	color: $text-color-light;
 }
 .card_box {
+	min-height: 100%;
 	padding: 25px;
 	position: relative;
 	border-radius: 15px;
@@ -86,7 +87,7 @@
 }
 .read_more {
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 30px;
 	& > a {
 		text-decoration: none;
 		&.filled {

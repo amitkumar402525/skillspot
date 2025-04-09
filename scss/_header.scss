@@ -94,3 +94,49 @@
   text-align: center;
   @include transform(translate(-50%, -50%));
 }
+
+
+
+/* Inner Header Scss starts from here */
+.bannerInner {
+  min-height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 50px 0;
+  & > .overlay {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 1;
+  }
+  .page_title {
+    color: $white;
+  }
+}
+.inner_banner_wrp {
+  position: relative;
+  z-index: 1;
+}
+.breadcrumb {
+  li, li a {
+    color: $white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 5px;
+  }
+  li {
+    &.link {
+      font-weight: bold;
+    }
+    &.active {
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}

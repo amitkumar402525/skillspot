@@ -197,7 +197,7 @@ img {
   min-width: 600px;
   min-height: 70px;
   background-color: #ffffff;
-  border-radius: 15px;
+  border-radius: 10px;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -246,8 +246,8 @@ img {
   min-width: 100px; }
   .btn-filter-search-btn > input {
     width: 100%;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     background-color: #8080c0;
     color: #ffffff;
     border: none; }
@@ -437,6 +437,15 @@ img {
   margin-bottom: 20px;
   margin-top: 0; }
 
+.alert-dismissible .btn-close {
+  background-size: 10px; }
+
+.formWrp .successful_msg_alert {
+  position: fixed;
+  top: 100px;
+  right: 45px;
+  z-index: 9; }
+
 .topbar {
   background-color: #000000;
   padding: 5px 0;
@@ -521,6 +530,39 @@ img {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%); }
+
+/* Inner Header Scss starts from here */
+.bannerInner {
+  min-height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 50px 0; }
+  .bannerInner > .overlay {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1; }
+  .bannerInner .page_title {
+    color: #ffffff; }
+
+.inner_banner_wrp {
+  position: relative;
+  z-index: 1; }
+
+.breadcrumb li, .breadcrumb li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 5px; }
+.breadcrumb li.link {
+  font-weight: bold; }
+.breadcrumb li.active a {
+  text-decoration: underline; }
 
 .mainFooter {
   background-color: #111111;
@@ -750,6 +792,7 @@ img {
   color: #555555; }
 
 .card_box {
+  min-height: 100%;
   padding: 25px;
   position: relative;
   border-radius: 15px;
@@ -822,7 +865,7 @@ img {
 
 .read_more {
   text-align: center;
-  margin-top: 20px; }
+  margin-top: 30px; }
   .read_more > a {
     text-decoration: none; }
     .read_more > a.filled {
@@ -1075,16 +1118,18 @@ img {
   min-width: 100%; }
   .customSelect + .select2-container .select2-selection--multiple {
     border: 1px solid #ddd;
-    padding: 10.5px 16px;
+    padding: 10.4px 12px;
     border-radius: 4px;
     width: 100%;
     background-color: #ffffff;
     font-size: 16px;
     color: #000000;
-    height: 50px;
-    min-height: 50px; }
+    max-height: 100px;
+    min-height: 50px;
+    overflow: auto;
+    height: auto; }
     .customSelect + .select2-container .select2-selection--multiple .select2-selection__choice {
-      margin: 1px 5px 0 0; }
+      margin: 1px 5px 5px 0; }
   .customSelect + .select2-container .select2-search--inline .select2-search__field {
     height: 22px;
     margin: 0; }

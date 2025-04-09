@@ -45,7 +45,7 @@
 					<div class="menus">
 						<ul class="list-style-none default-style-ul">
 							<li><a href="<?php echo $homeurl; ?>">Home</a></li>
-							<li><a href="#">About Us</a></li>
+							<li><a href="./pages/jobs.php">Jobs</a></li>
 							<li><a href="#">Categories</a></li>
 							<li><a href="./pages/contact.php">Contact Us</a></li>
 						</ul>
@@ -60,7 +60,7 @@
 			</div>
 		</div>
 
-		<?php if ($currentpage !== '/skillspot/pages/candidates.php' && $currentpage !== '/skillspot/signin.php' && $currentpage !== '/skillspot/pages/contact.php' && $currentpage !== '/skillspot/pages/privacy-policy.php') {  ?>
+		<?php if ($currentpage !== '/skillspot/pages/candidates.php' && $currentpage !== '/skillspot/signin.php' && $currentpage !== '/skillspot/pages/contact.php' && $currentpage !== '/skillspot/pages/privacy-policy.php' && $currentpage !== '/skillspot/pages/jobs.php') {  ?>
 			<div class="bannerSec">
 				<div class="backgroundVideo">
 					<video autoplay muted loop id="myVideo">
@@ -83,6 +83,32 @@
 				</div>
 				<div class="shape-arrow-bottom"><span class="left"></span><span class="right"></span></div>
 			</div>
+		<?php } elseif ($currentpage == '/skillspot/pages/jobs.php') {
+			?>
+			
+			<?php } else { ?>
+
+				<div class="bannerInner">
+				<ul class="breadcrumb">
+					<?php echo $currentpage; ?>
+					<li class="link"><a href="#">Home</a></li>
+					<li><a href="#">Pictures</a></li>
+					<li><a href="#">Summer 15</a></li>
+					<li>Italy</li>
+				</ul> 
+			</div>
+		<?php } ?>
+<?php
+
+/*
+		elseif ($currentpage == '/skillspot/pages/jobs.php') { ?>
+			<div class="bannerInner">
+				<ul class="breadcrumb">
+					<?php echo $currentpage; ?>
+					<li><a href="../index.php">Home</a></li>
+					<li><a href="/">jobs</a></li>
+				</ul> 
+			</div>
 		<?php } else { ?>
 			<div class="bannerInner">
 				<ul class="breadcrumb">
@@ -93,6 +119,6 @@
 					<li>Italy</li>
 				</ul> 
 			</div>
-		<?php } ?>
+		<?php } */ ?>
 	</header>
 <?php } ?>

@@ -11,7 +11,7 @@ $(document).ready(function() {
             allowClear: true,
             tags: allowTags,
             maximumSelectionLength: maxSelection,
-            tokenSeparators: [',', ' '],
+            tokenSeparators: [','],
             placeholder: placeholderText
         });
     });
