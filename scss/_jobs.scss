@@ -1,0 +1,32 @@
+.default_Sec {
+	&.main_sec {
+		padding: 70px 0;
+	}
+}
+.job_listing_header {
+	margin-bottom: 50px;
+}
+.haveFloatBtn {
+	padding-bottom: 70px;
+	.cardBtn {
+		border-radius: 0 0 15px 15px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		text-align: center;
+		right: 0;
+		.btn_default {
+			background-color: $primary-color;
+			color: $white;
+			text-decoration: none;
+			border-radius: 0 0 15px 15px;
+			padding: 10px;
+			width: 100%;
+			@include transition(all 0.3s ease);
+			&:hover {
+				background-color: $hovered-bg-color;
+			}
+		}
+	}
+}

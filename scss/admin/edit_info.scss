@@ -25,9 +25,15 @@
 	position: relative;
 }
 .uploadImg {
+	border: 2px dashed #dddddd;
+	border-radius: 10px;
+	height: 400px;
 	& > img {
-		border-radius: 10px;
-		border: 2px dashed #dddddd;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+	width: 100%;
+	object-position: top;
 	}
 }
 .uploadBtn {
@@ -62,5 +68,6 @@
 		bottom: 0;
 		z-index: 2;
 		cursor: pointer;
+		opacity: 0;
 	}
 }

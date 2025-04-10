@@ -97,6 +97,56 @@ img {
       }
     }
   }
+  &.multiple {
+    min-height: 50px;
+    display: block;
+    box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    .customSelect {
+      & + .select2-container {
+        .select2-selection--multiple {
+          padding-left: 50px;
+          border: none;
+        }
+        &.select2-container--open.select2-container--below {
+          .select2-selection--multiple {
+            border: 1px solid;
+            border-bottom: none;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+    .input_group {
+      position: relative;
+      border-left: 1px solid #ddd;
+      input {
+        padding-left: 50px;
+        min-height: 50px;
+        border: none;
+        width: 100%;
+      }
+    }
+    .col {
+      &:first-child {
+        .input_group {
+          border-left: 0px;
+          input { border-radius: 10px 0 0 10px; }
+        }
+      } 
+    }
+    .btn-filter-icon {
+      transform: translateY(-50%);
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      z-index: 1;
+    }
+    .btn-filter-search-btn {
+      min-width: 150px;
+      height: 100%;
+    }
+  }
 }
 .btn-filter-search-icon {
   width: 50px;

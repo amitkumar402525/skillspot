@@ -115,7 +115,11 @@
     z-index: 1;
   }
   .page_title {
+    width: 100%;
     color: $white;
+  }
+  .breadcrumb:last-child {
+    margin-bottom: 0;
   }
 }
 .inner_banner_wrp {
